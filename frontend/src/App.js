@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import "./App.css";
-import PrivateRoutes from "./containers/private-routes/PrivateRoutes";
-import localStorageService from "./services/LocalStorage";
-import { Menu } from "antd";
-import Register from "./containers/pages/Register";
-import Login from "./containers/pages/Login";
-import { UserOutlined } from "@ant-design/icons";
-import { AppstoreOutlined } from "@ant-design/icons";
+import React, { useState } from 'react';
+import './App.css';
+import PrivateRoutes from './containers/private-routes/PrivateRoutes';
+import localStorageService from './services/LocalStorage';
+import { Menu } from 'antd';
+// import Register from "./containers/pages/Register";
+// import Login from "./containers/pages/Login";
+// import { UserOutlined } from "@ant-design/icons";
+// import { AppstoreOutlined } from "@ant-design/icons";
 
 function App() {
   const [role, setRole] = useState(localStorageService.getRole());
