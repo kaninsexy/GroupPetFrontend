@@ -8,7 +8,7 @@ function CheckOutPage() {
   const [cart, setCart] = useState({
     name: 'Guest',
     items: [],
-    amount: 350000,
+    amount: 7680000,
     totalQty: 0,
     email: 'guest@test.com',
   });
