@@ -3,6 +3,7 @@ import RegisterPage from '../containers/pages/Register';
 import AddPetsPage from '../containers/pages/Add_Pets';
 import BookingPetsPage from '../containers/pages/Booking_Pets';
 import CheckOutPage from '../containers/pages/CheckoutPage';
+import Message from '../containers/pages/Message';
 
 const components = {
   login: {
@@ -25,6 +26,10 @@ const components = {
     url: '/checkout',
     component: CheckOutPage,
   },
+  message: {
+    url: '/message',
+    component: Message,
+  },
 };
 export default {
   guest: {
@@ -34,8 +39,9 @@ export default {
       components.addPets,
       components.bookingPets,
       components.checkoutpage,
+      components.message,
     ],
-    redirectRoutes: '/login',
+    // redirectRoutes: '/login',
   },
   user: {
     allowedRoutes: [components.login, components.register],

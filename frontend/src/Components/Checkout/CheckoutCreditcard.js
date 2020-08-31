@@ -42,6 +42,7 @@ function Checkout(props) {
     creditCardConfigure();
     omiseCardHandler();
   };
+  const { cart } = props;
 
   return (
     <div className='own-form'>
@@ -52,6 +53,7 @@ function Checkout(props) {
           id='credit-card'
           className='btn'
           type='button'
+          disabled={cart.amount === 0}
           onClick={handleClick}
         >
           Pay with Credit Card
