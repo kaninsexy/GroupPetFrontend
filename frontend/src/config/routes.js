@@ -41,7 +41,7 @@ export default {
       components.checkoutpage,
       components.message,
     ],
-    // redirectRoutes: '/login',
+    redirectRoutes: '/login',
   },
   user: {
     allowedRoutes: [components.login, components.register],

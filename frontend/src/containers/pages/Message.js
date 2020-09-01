@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import { useHistory } from 'react-router-dom';
 import MessageDetails from '../../Components/Checkout/modal/MessageDetails';
 import Spinner from '../../Components/Checkout/spinner/Spinner';
 
@@ -10,17 +10,22 @@ function Message(props) {
     openModal: false,
     charge: undefined,
   });
-  useEffect(() => {
+
+  useEffect(async () => {
     setMessage({ ...message, loading: true });
-    const response = axios.get('https://0a804bb98c8f.ngrok.io/webhooks');
+
+    const response = await axios.get(
+      'https://c5721c0dd28c.ngrok.io/bank-charge'
+    );
+
     if (response.data) {
       setMessage({ loading: false, openModal: true, charge: response.data });
     }
-  });
+  }, []);
 
   const handleCloseModal = () => {
     setMessage({ ...message, openModal: false });
-    props.history.push('/');
+    props.history.push('/checkout');
   };
   const { loading, openModal, charge } = message;
   return (
