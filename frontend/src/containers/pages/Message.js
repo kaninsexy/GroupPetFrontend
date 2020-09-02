@@ -10,13 +10,11 @@ function Message(props) {
     openModal: false,
     charge: undefined,
   });
-
+  const history = useHistory();
   useEffect(async () => {
     setMessage({ ...message, loading: true });
 
-    const response = await axios.get(
-      'https://c5721c0dd28c.ngrok.io/bank-charge'
-    );
+    const response = await axios.get('http://localhost:8000/bank-charge');
 
     if (response.data) {
       setMessage({ loading: false, openModal: true, charge: response.data });
@@ -25,7 +23,8 @@ function Message(props) {
 
   const handleCloseModal = () => {
     setMessage({ ...message, openModal: false });
-    props.history.push('/checkout');
+    // history.push('/checkout');
+    window.location.href = '/checkout';
   };
   const { loading, openModal, charge } = message;
   return (
